@@ -1,0 +1,11 @@
+srcs = Split('sync_to_async.cc')
+target = 'a.out'
+cpp_path= Split('./lib')
+libs = Split('colib pthread dl ')
+lib_path = Split('./lib/solib ./lib/lib')
+cc_flags = Split('-g')
+cc = 'gcc44'                                                                     
+cxx = 'g++44' 
+
+Program(target, srcs, CPPPATH=cpp_path, LIBS=libs, LIBPATH=lib_path,
+CCFLAGS=cc_flags, CC=cc, CXX=cxx)
